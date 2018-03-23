@@ -47,9 +47,7 @@ function initializeApplication(){
 	elMain.innerHTML += '<div style="width: 40%; margin: auto; padding:10px; margin-bottom: 20px;"><div class="progress" style="height: 20px;"><div id="loaderProgressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div></div></div>';
 
      displayPB();
-
 }
-
 
 var timerCount = 0;
 function displayPB() {
@@ -62,11 +60,33 @@ function displayPB() {
         setTimeout(displayPB, 50);
     } else {
         timerCount = 0;
+        
+        //start step-402
+        document.body.innerHTML = formLogin();
+        //end step-402
+
         return false;
     }
 }
-	
-	
+
+//end of 401 beginning of step-402
+function formLogin() {
+    return '<form id="loginFrm" name="loginFrm" action="#" class="animated zoomIn"><div class="form-group"><label for="email">Email address:</label><input type="email" class="form-control" id="email" value="me@there.com"></div><div class="form-group"><label for="pwd">Password:</label><input type="password" class="form-control" id="pwd" value="dfdf"></div><div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me </label></div><button id="loginBtn" type="submit" class="btn btn-primary" onclick="validateLogin()">Submit</button></form>';
+}
+
+function validateLogin() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("pwd").value;
+    if (email !== '' && password !== '') {
+        document.body.innerHTML = '<main class="animated zoomIn"><h1 id="inNow">We are in now</h1></main>';
+    } else {
+        alert('bad');
+        return false;
+    }
+    return false;
+}
+
+//step-402 ended
 
 
 
