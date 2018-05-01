@@ -3,7 +3,7 @@
 
 var appData = {
     title: 'inside out - js',
-    tagLine: 'continuously falling forward into the light...'
+    tagLine: 'continuously falling forward into the light...',
 	sideMenu: ['posts', 'pages']
 };
 
